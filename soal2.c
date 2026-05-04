@@ -2,27 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_SIZE 100 
+#define MAX_SIZE 100
 
-typedef struct {
+typedef struct{
     int arr[MAX_SIZE];
     int top;
 } Stack;
 
-// inisialisasi 
-void initialize(Stack *stack){
-    stack -> top = -1 ; 
-}
-
-// Fungsi cek stack kosong 
-int apkhKosong (Stack *stack){
-    return stack -> top == -1; 
-}
-
-// Fungsi cek stack full 
-int apkhFull (Stack *stack){
-    return stack->top>=MAX_SIZE - 1;
-} 
+int arr[MAX_SIZE];
+int top = -1;
 
 // Fungsi untuk membandingkan dua angka
 // Mengembalikan nilai < 0 jika angka a lebih baik dari b
@@ -33,29 +21,29 @@ int compare_angka(Stack a, Stack b) {
 }
 
 // Fungsi untuk memasukkan integer ke stack
-void push(Stack *stack, int value ) {
-    if (apkhFull(stack)){
+void push (int d) {
+    if (top >= MAX_SIZE - 1) {
         printf("Stack Overflow\n");
-        return;
+    } else {
+        arr[++top] = d;
     }
-    stack->arr[++stack->top] = value; 
 }
 
-int main() {
-    Stack stack;
-    initialize(&stack);
+int main(){ 
+int inte[MAX_SIZE];
     
-    // Membaca input 
-    if (scanf("%d\n", stack) !=1) return 0;
+    // Input
+    scanf("%d\n", inte); 
 
-    // Memasukkan setiap integer ke dalam stack
-    int len = (&stack);
+    // Memasukkan setiap char ke dalam stack
+    int len = strlen(inte);
     for (int i = 0; i < len; i++) {
-        push(&stack, i);
+        push(inte[i]);
+    }
 
-    // Mengeluarkan integer dari stack untuk output integer merge terurut
+    // Output urutan dari yang terkecil
     for (int i = 0; i < len; i++) {
-        printf("%d\n", push(Stack *stack, int value));
+        printf("%d\n", pop());
     }
     printf("\n");
 
