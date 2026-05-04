@@ -44,9 +44,6 @@ void push(Stack *stack, int value ) {
 int main() {
     Stack stack;
     initialize(&stack);
-
-    // Alokasi memori dinamis untuk menyimpan data angka
-    Stack *stack = (Stack *)malloc(sizeof(Stack));
     
     // Membaca input 
     if (scanf("%d\n", stack) !=1) return 0;
