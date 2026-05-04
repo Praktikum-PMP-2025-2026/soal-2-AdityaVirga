@@ -49,7 +49,7 @@ int main() {
     Stack *stack = (Stack *)malloc(sizeof(Stack));
     
     // Membaca input 
-    if (scanf("%d\n", &stack) !=1) return 0;
+    if (scanf("%d\n", stack) !=1) return 0;
 
     // Memasukkan setiap integer ke dalam stack
     int len = (&stack);
@@ -58,7 +58,7 @@ int main() {
 
     // Mengeluarkan integer dari stack untuk output integer merge terurut
     for (int i = 0; i < len; i++) {
-        printf("%d\n", push());
+        printf("%d\n", push(Stack *stack, int value));
     }
     printf("\n");
 
