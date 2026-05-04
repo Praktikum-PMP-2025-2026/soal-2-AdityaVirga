@@ -29,18 +29,28 @@ void push (int d) {
     }
 }
 
+// Fungsi untuk mengeluarkan char dari stack
+char pop() {
+    if (top < 0) {
+        return '\0';
+    } else {
+        return stack[top--];
+    }
+}
+
+
 int main(){ 
 int inte[MAX_SIZE];
     
     // Input
     scanf("%d\n", inte); 
 
-    // Memasukkan setiap char ke dalam stack
+    // Memasukkan setiap integer ke dalam stack
     int len = strlen(inte);
     for (int i = 0; i < len; i++) {
         push(inte[i]);
     }
-
+    
     // Output urutan dari yang terkecil
     for (int i = 0; i < len; i++) {
         printf("%d\n", pop());
